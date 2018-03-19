@@ -20,8 +20,6 @@ import java.util.Collections;
 import java.util.Date;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -30,9 +28,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SightingsControllerTest {
     private static final Species MALLARD = new Species("Mallard");
     private static final Sightings TESTSHIGHTING = new Sightings(MALLARD,"description",new Date(),2);
-    private static final String exmapleSighting = "{\"species\": \"redhead\"," +
-            "\"description\": \"I think this one is called Alfred J.\"," +
-            "\"dateTime\": \"2016-11-29T10:00:01Z\",\"count\": 1}";
 
     @MockBean
     private SightingService sightingService;
@@ -40,17 +35,9 @@ public class SightingsControllerTest {
     @MockBean
     private SpeciesService speciesService;
 
-    @MockBean
-    private Sightings sightings;
-
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private SightingsController sightingsController;
-
-    @MockBean
-    private Species species;
 
     @Before
     public void setUp() {
@@ -64,15 +51,12 @@ public class SightingsControllerTest {
         this.mockMvc.perform(get("/sightings"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk());
+        //Ehkä vähän turha testi
     }
 
     @Test
     public void whenNewSightingIsCreatedShouldReturnStatusCreated() throws Exception {
-
-        this.mockMvc.perform(post("/sightings"))
-                .andDo(print())
-                .andExpect(status().isCreated())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
+        //TODO kun keksin miten
     }
 
 }

@@ -29,7 +29,7 @@ public class SightingsController {
         URI location = UriComponentsBuilder.newInstance()
                 .scheme("http")
                 .host("localhost")
-                .port(8080)
+                .port(8081)
                 .path("/sightings/{id}")
                 .buildAndExpand(sightings.getId())
                 .toUri();

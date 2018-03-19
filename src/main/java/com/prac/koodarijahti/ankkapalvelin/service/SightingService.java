@@ -23,6 +23,7 @@ public class SightingService {
         if (speciesService.checkForExistingSpecies(sightings.getSpecies().getName())){
             if (sightings.getDateTime() == null || sightings.getDateTime().equals(""))
             sightings.setDateTime(new Date());
+            if (sightingsRepository.existsById(sightings.getId())) sightings.setId(sightingsRepository.count() + 1);
             return sightingsRepository.save(sightings);
         } else throw new CustomNotFoundException("No such bird in the database - " + sightings.getSpecies().getName());
       }

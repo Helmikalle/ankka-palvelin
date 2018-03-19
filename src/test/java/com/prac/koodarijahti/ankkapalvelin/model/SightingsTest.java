@@ -28,7 +28,7 @@ public class SightingsTest {
     }
 
     @Test
-    public void saveShouldPersist() {
+    public void saveShouldPersistData() {
         Sightings sightings = this.testEntityManager.persistFlushFind(new Sightings(new Species("mallard"),"test content", new Date(),2));
         assertThat(sightings.getSpecies().getName()).isEqualTo("mallard");
         assertThat(sightings.getCount()).isGreaterThan(0);
@@ -37,7 +37,7 @@ public class SightingsTest {
     }
 
     @Test(expected = ConstraintViolationException.class)
-    public void shouldNotAllowToSaveIfCountIsZero() {
+    public void shouldNotAllowToSaveIfCountIsZeroExceptionExpected() {
         Sightings sightings = this.testEntityManager.persistFlushFind(new Sightings(new Species("mallard"),"test",new Date(),0));
         assertThat(sightings.getCount()).isEqualTo(0);
     }

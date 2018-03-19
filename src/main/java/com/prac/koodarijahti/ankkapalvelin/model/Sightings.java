@@ -37,6 +37,10 @@ public class Sightings implements Serializable {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getDescription() {
         return description;
     }
