@@ -20,7 +20,7 @@ public class SightingService {
     }
 
     public Sightings addNewSighting(Sightings sightings) {
-        if (speciesService.checkForExistingSpecies(sightings.getSpecies().getName())){
+        if (speciesService.checkForExistingSpecies(sightings.getSpecies().getName().toLowerCase())){
             if (sightings.getDateTime() == null || sightings.getDateTime().equals(""))
             sightings.setDateTime(new Date());
             if (sightingsRepository.existsById(sightings.getId())) sightings.setId(sightingsRepository.count() + 1);
