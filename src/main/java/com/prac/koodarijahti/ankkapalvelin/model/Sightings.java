@@ -2,6 +2,7 @@ package com.prac.koodarijahti.ankkapalvelin.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,6 +14,7 @@ public class Sightings implements Serializable {
     private String description;
     private Date dateTime;
     @Min(value = 1,message = "Count can't be 0.")
+    @NotNull
     private Integer count;
 
     protected Sightings() {
