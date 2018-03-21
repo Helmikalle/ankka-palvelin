@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 public class Sightings implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO) private long id;
-    private Species species; //Voisi käyttää ihan vaan stringiä. En tiedä kumpi parempi.
+    private String species;
     @Lob
     private String description;
     private Date dateTime;
@@ -18,18 +18,18 @@ public class Sightings implements Serializable {
     protected Sightings() {
     }
 
-    public Sightings(Species species, String description, Date dateTime, Integer count) {
+    public Sightings(String species, String description, Date dateTime, Integer count) {
         this.species = species;
         this.description = description;
         this.dateTime = dateTime;
         this.count = count;
     }
 
-    public Species getSpecies() {
+    public String getSpecies() {
         return species;
     }
 
-    public void setSpecies(Species species) {
+    public void setSpecies(String species) {
         this.species = species;
     }
 

@@ -1,7 +1,6 @@
 package com.prac.koodarijahti.ankkapalvelin.controller;
 
 import com.prac.koodarijahti.ankkapalvelin.model.Sightings;
-import com.prac.koodarijahti.ankkapalvelin.model.Species;
 import com.prac.koodarijahti.ankkapalvelin.service.SightingService;
 import com.prac.koodarijahti.ankkapalvelin.service.SpeciesService;
 import org.junit.Before;
@@ -26,8 +25,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest
 @RunWith(SpringRunner.class)
 public class SightingsControllerTest {
-    private static final Species MALLARD = new Species("Mallard");
-    private static final Sightings TESTSHIGHTING = new Sightings(MALLARD,"description",new Date(),2);
+
+    private static final Sightings TESTSHIGHTING = new Sightings("mallard","description",new Date(),2);
 
     @MockBean
     private SightingService sightingService;

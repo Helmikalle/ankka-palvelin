@@ -2,7 +2,6 @@ package com.prac.koodarijahti.ankkapalvelin.service;
 
 import com.prac.koodarijahti.ankkapalvelin.exception.CustomNotFoundException;
 import com.prac.koodarijahti.ankkapalvelin.model.Sightings;
-import com.prac.koodarijahti.ankkapalvelin.model.Species;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -28,12 +27,12 @@ public class SightingServiceTest {
     @Test(expected = CustomNotFoundException.class)
     public void whenCreatingNewSightingWithSpeciesThatsNotInDatabaseThenShouldThrowException() {
         Mockito.when(speciesService.checkForExistingSpecies("duck")).thenReturn(false);
-        sightingService.addNewSighting(new Sightings(new Species("duck"),"test",new Date(),2));
+        sightingService.addNewSighting(new Sightings("duck","test",new Date(),2));
     }
 
     @Test
     public void whenTimestampIsMissingShouldGiveNewDate() {
-        Sightings sightings = new Sightings(new Species("mallard"),"test",null,2);
+        Sightings sightings = new Sightings("mallard","test",null,2);
         Mockito.when(speciesService.checkForExistingSpecies("mallard")).thenReturn(true);
         sightingService.addNewSighting(sightings);
         assertThat(sightings.getDateTime()).isCloseTo(new Date(), 1000);

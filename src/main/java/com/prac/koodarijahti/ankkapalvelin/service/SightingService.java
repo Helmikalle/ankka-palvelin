@@ -20,11 +20,11 @@ public class SightingService {
     }
 
     public Sightings addNewSighting(Sightings sightings) {
-        if (speciesService.checkForExistingSpecies(sightings.getSpecies().getName().toLowerCase())){
+        if (speciesService.checkForExistingSpecies(sightings.getSpecies().toLowerCase())){
             if (sightings.getDateTime() == null || sightings.getDateTime().equals(""))
             sightings.setDateTime(new Date());
             sightings.setId(sightingsRepository.count() + 1);
             return sightingsRepository.save(sightings);
-        } else throw new CustomNotFoundException("No such bird in the database - " + sightings.getSpecies().getName());
+        } else throw new CustomNotFoundException("No such bird in the database - " + sightings.getSpecies());
       }
 }
