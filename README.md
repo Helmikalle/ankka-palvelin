@@ -56,3 +56,5 @@ And there are some rules for the POST request.
 2.Count cant be 0 or empty (null).
 
 3.If there's no given time it will post the current time automatically.
+
+4.When adding new sighting, backend automatically generates id-field for sightings. Id is replaced in server if it is provided in POST-request body.
