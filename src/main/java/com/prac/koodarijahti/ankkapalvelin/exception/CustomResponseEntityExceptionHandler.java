@@ -29,7 +29,7 @@ public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptio
                 new Date(),
                 ex.getMessage(),
                 request.getDescription(false));
-        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+        return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
     @Override
