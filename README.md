@@ -21,7 +21,7 @@ Be sure to select 1.8 -> click next and just keep clicking until you get to clic
 It might take some time while maven does its magic and sorts everything out. But after that you're good to go!
 
 If you dont want see the project source code you can simply use the maven tools to run the server from command line.
-In windows first navigate to the cloned repositorys root folder and check if it finds maven by writing "mvnw --version"
+If you're using Windows, first navigate to the cloned repositorys root folder and check if it finds maven by writing "mvnw --version"
 
 it should print something like
 
