@@ -41,7 +41,7 @@ Then you can check if the project has everything need to run it by typing "mvnw 
 
 [INFO] BUILD SUCCESS
 
-Or if you want to pack it into a JAR file type "mwnw package". It will run all the tests and will build a runnable JAR file to the target folder.
+Or if you want to pack it into a JAR file type "mvnw package". It will run all the tests and will build a runnable JAR file to the "/target" folder.
 
 You can try running tests by typing "mvnw test" or just run it with "mvnw spring-boot:run".
 For other platforms i dont know the command line commands.
