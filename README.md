@@ -41,7 +41,9 @@ Then you can check if the project has everything need to run it by typing "mvnw 
 
 [INFO] BUILD SUCCESS
 
-you can try running tests by typing "mvnw test" or just run it with "mvnw spring-boot:run".
+Or if you want to pack it into a JAR file type "mwnw package". It will run all the tests and will build a runnable JAR file to the target folder.
+
+You can try running tests by typing "mvnw test" or just run it with "mvnw spring-boot:run".
 For other platforms i dont know the command line commands.
 
 Requests root url is "http://localhost:8081".
@@ -57,4 +59,4 @@ And there are some rules for the POST request.
 
 3.If there's no given time it will post the current time automatically.
 
-4.When adding new sighting, backend automatically generates id-field for sightings. Id is replaced in server if it is provided in POST-request body.
+4.Id is replaced in server if it is provided in POST-request body.
