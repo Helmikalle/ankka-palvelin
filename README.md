@@ -41,7 +41,7 @@ Then you can check if the project has everything need to run it by typing "mvnw 
 
 [INFO] BUILD SUCCESS
 
-You can try running tests by typing "mvnw test" or just run it with "mvnw spring-boot:run".
+With ./mvnw package && java -jar target/ankka-palvelin-0.0.1-SNAPSHOT.jar command it will run the tests and pack the whole thing into a .jar file and run the server.
 For other platforms i dont know the command line commands.
 
 Requests root url is "http://localhost:8081".
