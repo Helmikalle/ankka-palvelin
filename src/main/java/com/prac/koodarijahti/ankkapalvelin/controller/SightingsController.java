@@ -3,6 +3,7 @@ package com.prac.koodarijahti.ankkapalvelin.controller;
 import com.prac.koodarijahti.ankkapalvelin.model.Sightings;
 import com.prac.koodarijahti.ankkapalvelin.service.SightingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +20,8 @@ public class SightingsController {
     private SightingService sightingService;
 
     @GetMapping("/sightings")
-    public Iterable<Sightings> findAllSightings() {
-        return sightingService.getAll();
+    public Iterable<Sightings> findAllSightings(Pageable pageable) {
+        return sightingService.getAll(pageable);
     }
 
     @PostMapping("/sightings")
