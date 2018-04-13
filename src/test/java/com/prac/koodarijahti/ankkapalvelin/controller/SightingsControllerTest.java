@@ -6,21 +6,14 @@ import com.prac.koodarijahti.ankkapalvelin.service.SpeciesService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Collections;
 import java.util.Date;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
 @RunWith(SpringRunner.class)
@@ -41,16 +34,6 @@ public class SightingsControllerTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-    }
-
-    @Test
-    public void testFindAllSightingsAndExpectStatusOk() throws Exception {
-        Mockito.when(this.sightingService.getAll())
-                .thenReturn(Collections.singletonList(TESTSHIGHTING));
-        this.mockMvc.perform(get("/sightings"))
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(status().isOk());
-        //Ehkä vähän turha testi
     }
 
     @Test
